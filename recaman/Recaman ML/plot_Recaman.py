@@ -1,12 +1,10 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-
-
 recamanList = list()
 xValues = list()
 
-with open('C:\\Users\\DRock\\Documents\\GitHub\\marvel\\recaman\\Recaman ML\\Datasets\\RecamanTrainingData_30000') as f:
+with open('.\\Datasets\\RecamanTrainingData_30000') as f:
     lines = f.readlines()
 
     for line in lines:
@@ -15,7 +13,6 @@ with open('C:\\Users\\DRock\\Documents\\GitHub\\marvel\\recaman\\Recaman ML\\Dat
             step,label = line.split(",")
             recamanList.append(float(label))
             xValues.append(float(step))
-
 
 plt.plot(xValues,recamanList)
 plt.ylabel('Recaman Output (labels)')
