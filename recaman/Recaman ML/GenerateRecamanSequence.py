@@ -33,8 +33,8 @@ def recaman(n,f):
         f.write(str(step) + "," + str(arr[i]) + "\n")
  
 # Driver code
-n = 50
-f = open('RecamanTrainingData','w')
+n = 20
+f = open('RecamanTrainingData_' + str(n),'w')
  
 recaman(n, f)
 f.close()
