@@ -42,7 +42,7 @@ linear_regressor = tf.estimator.LinearRegressor(
     optimizer=my_optimizer
 )
 
-def my_input_fn(features, targets, batch_size=10, shuffle=True, num_epochs=None):
+def my_input_fn(features, targets, batch_size=32, shuffle=True, num_epochs=None):
     """Trains a linear regression model of one feature.
   
     Args:
