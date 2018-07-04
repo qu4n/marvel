@@ -23,10 +23,10 @@ class Recaman(object):
     def solve(self,i,step):
         if(step<self.n):
             backStep = i - step
-            if((backStep < 0) or (backStep in self.sequence)):
+            if((backStep < 0) or (backStep in self.sequence.values())):
                 forStep = i + step
-                self.sequence[forStep] = step
+                self.sequence[step] = forStep
                 self.solve(forStep,step+1)
             else:
-                self.sequence[backStep] = step
+                self.sequence[step] = backStep
                 self.solve(backStep,step+1)
