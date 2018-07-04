@@ -14,7 +14,7 @@ from tensorflow.python.data import Dataset
 
 
 #Loading our dataset
-recaman_sequence_dataframe = pd.read_csv(".\\Datasets\\RecamanTrainingData_100000.csv", sep=",")
+recaman_sequence_dataframe = pd.read_csv(".\\Datasets\\RecamanTrainingData_194767.csv", sep=",")
 
 #Randomize the data
 recaman_sequence_dataframe = recaman_sequence_dataframe.reindex(np.random.permutation(recaman_sequence_dataframe.index))
