@@ -33,7 +33,7 @@ def recaman(n,f):
         f.write(str(step) + "," + str(arr[i]) + "\n")
  
 # Driver code
-n = 6000
+n = 200
 f = open('RecamanTrainingData_' + str(n) + '.csv','w')
  
 recaman(n, f)
