@@ -3,6 +3,11 @@
 #   where n is the single constructor input argument.
 #
 #   Tested with python version 3.6.6
+from operator import itemgetter
+from collections import OrderedDict
+import sys
+
+sys.setrecursionlimit(16000)
 class Recaman(object):
     ''' ATTRIBUTES '''
     sequence = {}
@@ -12,24 +17,16 @@ class Recaman(object):
     def __init__(self,n):
         super(Recaman, self).__init__()
         self.n = n
-        self.sequence = {}
         self.solve(0,0)
 
     # recursive solution
     def solve(self,i,step):
-        if(len(self.sequence)==self.n):
-            return
-        
-        backStep = i - step
-        forStep = i + step
-
-        if((backStep < 0) or (backStep in self.sequence)):
-            self.sequence[forStep] = step
-            self.solve(forStep,step+1)
-        else:
-            self.sequence[backStep] = step
-            self.solve(backStep,step+1)
-    
-    # get final sequence
-    def getSequence(self):
-        return list(self.sequence.keys())
+        if(step<self.n):
+            backStep = i - step
+            if((backStep < 0) or (backStep in self.sequence)):
+                forStep = i + step
+                self.sequence[forStep] = step
+                self.solve(forStep,step+1)
+            else:
+                self.sequence[backStep] = step
+                self.solve(backStep,step+1)

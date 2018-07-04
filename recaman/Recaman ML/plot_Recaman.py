@@ -8,7 +8,7 @@ xValues = list()
 
 
 #Open a CSV file contain a (step size, recaman output) pair per line
-with open('.\\Datasets\\RecamanTrainingData_100000') as f:
+with open('Datasets/RecamanTrainingData_50.csv') as f:
     #Read in all lines in the file
     lines = f.readlines()
 
