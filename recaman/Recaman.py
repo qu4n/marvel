@@ -19,7 +19,7 @@ class Recaman(object):
         self.n = n
         self.solve(0,0)
 
-    # recursive solution
+    # recursive solution alright alright alright
     def solve(self,i,step):
         if(step<self.n):
             backStep = i - step
