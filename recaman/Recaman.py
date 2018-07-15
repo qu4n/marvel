@@ -7,7 +7,7 @@ from operator import itemgetter
 from collections import OrderedDict
 import sys
 
-sys.setrecursionlimit(1000000)
+sys.setrecursionlimit(16000)
 class Recaman:
     ''' ATTRIBUTES '''
     sequence = {}
@@ -15,6 +15,7 @@ class Recaman:
 
     def solve(self,step,total_steps):
         if (step == total_steps):
+            self.current_position = 0
             return
         
         backStep = self.current_position - step
