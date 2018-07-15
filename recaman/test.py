@@ -4,10 +4,13 @@ import numpy as np
 import time
 
 t = time.time()
-r = Recaman(100)
+r = Recaman()
+r.solve(0,4000)
 t = time.time() - t
-print(t)
-print(r.sequence)
+f = open("seq.txt",'w')
+f.write(str(t))
+f.write(str(r.sequence))
+f.close()
 
-plt.plot(list(r.sequence.keys()),list(r.sequence.values()))
-plt.show()
+#plt.plot(list(r.sequence.keys()),list(r.sequence.values()))
+#plt.show()

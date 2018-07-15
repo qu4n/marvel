@@ -7,26 +7,23 @@ from operator import itemgetter
 from collections import OrderedDict
 import sys
 
-sys.setrecursionlimit(16000)
-class Recaman(object):
+sys.setrecursionlimit(1000000)
+class Recaman:
     ''' ATTRIBUTES '''
     sequence = {}
+    current_position = 0
 
-    ''' METHODS '''
-    # constructor
-    def __init__(self,n):
-        super(Recaman, self).__init__()
-        self.n = n
-        self.solve(0,0)
-
-    # recursive solution alright alright alright
-    def solve(self,i,step):
-        if(step<self.n):
-            backStep = i - step
-            if((backStep < 0) or (backStep in self.sequence.values())):
-                forStep = i + step
-                self.sequence[step] = forStep
-                self.solve(forStep,step+1)
-            else:
-                self.sequence[step] = backStep
-                self.solve(backStep,step+1)
+    def solve(self,step,total_steps):
+        if (step == total_steps):
+            return
+        
+        backStep = self.current_position - step
+        if((backStep < 0) or (backStep in self.sequence.values())):
+            forStep = self.current_position + step
+            self.sequence[step] = forStep
+            self.current_position = forStep
+            self.solve(step+1,total_steps)
+        else:
+            self.sequence[step] = backStep
+            self.current_position = backStep
+            self.solve(step+1,total_steps)
