@@ -4,7 +4,7 @@ import numpy as np
 import time
 
 t = time.time()
-%time r = Recaman(100)
+r = Recaman(100)
 t = time.time() - t
 print(t)
 print(r.sequence)
